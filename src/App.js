@@ -1,25 +1,57 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Tasks from './components/Tasks';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [allTask, setAllTask] = useState([
+		{
+            id: 1,
+            text: "Doctors Appointment",
+            
+        },
+        {
+            id: 2,
+            text: "Meeting at School",
+           
+        },
+        {
+            id: 3,
+            text: "Food Shopping",
+            
+        },
+	]);
+
+	const [editedIndex, setEditedIndex] = useState(0)
+
+	const deleteTask = (id) => {
+		setAllTask(allTask.filter((task) => task.id !== id));
+		console.log("Task DElETEd", id)
+	}
+
+	const editTask = (id) => {
+		setEditedIndex(id);
+		console.log("Edit", id)
+	}
+
+	const addTask = (todo) => {
+		const id = Math.floor(Math.random() * 100) + 1;
+		const newTask = { text: todo, id:id }
+		setAllTask([...allTask, newTask])
+		console.log(todo)
+	}
+
+	return (
+		<div className="App">
+			<Header onAdd={addTask} />
+			{
+				allTask.length > 0 ? 
+				<Tasks tasks={allTask} onDelete={deleteTask} onEdit={editTask} /> :
+				<h2>No task, add new tasks</h2>
+			}
+			
+		</div>
+	);
 }
 
 export default App;
