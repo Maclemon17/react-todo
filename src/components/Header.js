@@ -3,7 +3,7 @@ import Button from './Button'
 import EditTask from './EditTask'
 
 const Header = ({ onAdd, showEdit, selected, update, updateText }) => {
-	const [todo, setTodo] = useState({})
+	const [todo, setTodo] = useState('')
 
 	const addNewTask = () => {
 		if (todo === '') {

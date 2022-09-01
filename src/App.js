@@ -41,10 +41,10 @@ function App() {
 	const updateTask = () => {
 		setAllTask(
 			allTask.map((task) => (
-				task.id === editedIndex ? { ...task, text: updatedText } : task
+				task.id === editedIndex ? { ...task, text: updatedText || task.text } : task
 			))
 		)
-
+		setUpdatedText('')
 		setShowEdit(!showEdit)
 	}
 

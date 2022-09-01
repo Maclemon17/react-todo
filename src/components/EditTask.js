@@ -1,16 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Button from './Button'
 
 const EditTask = ({ selectedTask, update, updatedText }) => {
-    // const [updatedText, setUpdatedText] = useState('');
-    // const [id, setId] = useState(selectedTask.id)
-    // const [updatedDetails, setupdatedDetails] = useState('');
-    // console.log(selectedTask);
-
-    // const updateTask = () => {
-    //     const update = { id: selectedTask.id, updatedText }
-    //     // console.log(update)
-    // }
 
     return (
         <>
