@@ -4,22 +4,22 @@ import Tasks from './components/Tasks';
 import { useState } from 'react';
 
 function App() {
-	const data = [
-		{
-			id: 1,
-			text: "Doctors Appointment",
-		},
-		{
-			id: 2,
-			text: "Meeting at School",
-		},
-		{
-			id: 3,
-			text: "Food Shopping",
-		},
-	]
+	// const data = [
+	// 	{
+	// 		id: 1,
+	// 		text: "Doctors Appointment",
+	// 	},
+	// 	{
+	// 		id: 2,
+	// 		text: "Meeting at School",
+	// 	},
+	// 	{
+	// 		id: 3,
+	// 		text: "Food Shopping",
+	// 	},
+	// ]
 
-	const [allTask, setAllTask] = useState(data);
+	const [allTask, setAllTask] = useState([]);
 	const [editedIndex, setEditedIndex] = useState(0);
 	const [showEdit, setShowEdit] = useState(false);
 	const [selectedTask, setSelectedTask] = useState('');
