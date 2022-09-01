@@ -3,7 +3,7 @@ import Task from './Task'
 
 const Tasks = ({ tasks, onDelete, onEdit }) => {
   return (
-    <div className='mt-5'>
+    <div className='mt-5 tasks'>
       {
         tasks.map((task) => (
           <Task key={task.id}
